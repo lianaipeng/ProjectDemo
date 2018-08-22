@@ -13,9 +13,9 @@ buildFun() {
     then
         mkdir bin
     fi
-    if [ ! -d "logs/" ]
+    if [ ! -d "log/" ]
     then
-        mkdir logs
+        mkdir log
     fi
 
     # change root dir
@@ -37,8 +37,8 @@ cleanFun() {
     echo "## rm -rf bin/*"
     rm -rf obj/*
     echo "## rm -rf obj/*"
-    rm -rf logs/*
-    echo "## rm -rf logs/*"
+    rm -rf log/*
+    echo "## rm -rf log/*"
 }
 
 if [ $# == 0 ]

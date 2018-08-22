@@ -5,6 +5,6 @@
         <ServicePort>40041</ServicePort>
 
         <LogLevel>1</LogLevel>
-        <LogPath>./logs</LogPath>
+        <LogPath>./log</LogPath>
     </BaseParam>
 </Profile>
