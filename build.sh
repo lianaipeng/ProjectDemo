@@ -5,6 +5,19 @@ helpFun() {
 }
 
 buildFun() {
+    if [ ! -d "obj/" ]
+    then
+        mkdir obj
+    fi
+    if [ ! -d "bin/" ]
+    then
+        mkdir bin
+    fi
+    if [ ! -d "logs/" ]
+    then
+        mkdir logs
+    fi
+
     # change root dir
     cd obj
     #echo "## change root dir:cd bin"
