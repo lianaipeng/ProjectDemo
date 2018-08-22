@@ -20,9 +20,9 @@ include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/include/hiredis-0.13.3  
         ${CMAKE_CURRENT_SOURCE_DIR}/include/curl-7.61.0 
         ${CMAKE_CURRENT_SOURCE_DIR}/include/librdkafka-0.11.5 
-        ${CMAKE_CURRENT_SOURCE_DIR}/src 
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/public 
         ${CMAKE_CURRENT_SOURCE_DIR}/src/base 
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/public 
+        ${CMAKE_CURRENT_SOURCE_DIR}/src 
         )
 
 ## 库文件信息
@@ -33,6 +33,7 @@ link_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/lib/librdkafka-0.11.5 
         )
 link_libraries(
+        pthread
         hiredis 
         curl 
         rdkafka 
@@ -41,14 +42,15 @@ link_libraries(
 
 ## 源文件信息
 ## 并将名称保存到 DIR_SRCS 变量
-aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src DIR_SRCS)
-aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src/public DIR_SRCS)
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src/base DIR_SRCS)
+aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src/public DIR_SRCS)
+aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src DIR_SRCS)
 #aux_source_directory(src/ipip DIR_SRCS)
 #message("########## ${DIR_SRCS}")
 
 #set(CMAKE_EXE_LINKER_FLAGS "-lpthread -lhiredis")
-set(CMAKE_EXE_LINKER_FLAGS "-lpthread")
+## 系统库
+#set(CMAKE_EXE_LINKER_FLAGS "-lpthread")
 
 ## 指定生成可执行程序的路径
 #set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)

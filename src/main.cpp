@@ -2,6 +2,7 @@
 #include <signal.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <assert.h>
 #endif
 
 #include "LogModule.h"
@@ -11,6 +12,7 @@
 #include "HttpClient.h"
 #include "KafkaProducer.h"
 #include "KafkaConsumer.h"
+#include "IPFinder.h"
 
 bool g_exit = false;
 
@@ -73,9 +75,21 @@ int main(int argc, char **argv)
     pProducer->Send(sTmp.c_str(), sTmp.length());
     */
 
+    /*
     CKafkaConsumer *pConsumer = new CKafkaConsumer();
     pConsumer->Init("192.168.1.41:9091", "test", "0", "11", NULL, NULL);
     pConsumer->Start(1000);
+    */
+
+    CIPFinder finder;
+    IPLocation loc;
+    //finder.Find("192.168.1.100", loc);
+    //finder.Find("36.102.228.95", loc);
+    // beijing
+    //finder.Find("124.126.1.0", loc);
+    // henan 
+    finder.Find("220.202.87.3", loc);
+    
     while(!g_exit)
     {
         sleep(5);
