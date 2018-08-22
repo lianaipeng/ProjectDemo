@@ -1,0 +1,10 @@
+<Profile>
+    <BaseParam>
+        <ServiceName>projectdemo</ServiceName>
+        <ServiceHost>0.0.0.0</ServiceHost>
+        <ServicePort>40041</ServicePort>
+
+        <LogLevel>1</LogLevel>
+        <LogPath>./logs</LogPath>
+    </BaseParam>
+</Profile>

@@ -1,0 +1,9 @@
+prefix=/home/lian.aipeng/download/librdkafka-0.11.5/build
+libdir=/home/lian.aipeng/download/librdkafka-0.11.5/build/lib
+includedir=/home/lian.aipeng/download/librdkafka-0.11.5/build/include
+
+Name: librdkafka++-static
+Description: The Apache Kafka C/C++ library (static)
+Version: 0.11.5
+Cflags: -I${includedir}
+Libs: -L${libdir} ${libdir}/librdkafka++.a -L../src -lrdkafka -lstdc++
